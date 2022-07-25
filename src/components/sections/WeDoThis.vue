@@ -8,7 +8,11 @@
       your customers
     </p>
     <div class="we-do-this__card d-flex justify-content-between">
-      <div class="we-do-this__item" v-for="(item, index) in listOfItems" :key="index">
+      <div
+        class="we-do-this__item"
+        v-for="(item, index) in listOfItems"
+        :key="index"
+      >
         <div class="d-flex justify-content-center">
           <img
             class="mx-auto"
