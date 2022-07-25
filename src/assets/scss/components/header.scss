@@ -1,0 +1,27 @@
+@import "~@/assets/scss/mixins";
+@import "~@/assets/scss/variables";
+.header {
+  max-width: 1920px;
+  &__logo {
+    width: 1.875rem;
+  }
+  &__list {
+    @include fonts(normal, 300, 1.125rem, inherit);
+    a {
+      color: $white !important;
+      &:active, &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+  &__button {
+    button {
+      @include fonts(normal, 700, 0.813rem, inherit);
+      padding: 1.125rem 1.75rem;
+      letter-spacing: 0.211rem;
+      text-align: center;
+      background-color: #F1B437;
+    }
+  }
+}

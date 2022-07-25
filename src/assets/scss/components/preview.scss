@@ -1,0 +1,29 @@
+@import "~@/assets/scss/_variables.scss";
+@import "~@/assets/scss/_mixins.scss";
+.preview-wrapper {
+  background-image: url("~@/assets/images/general/preview-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.preview {
+  height: 80% !important;
+  &__main-text {
+    @include fonts(normal, 300, 6.875rem, inherit);
+    opacity: 0.4;
+    color: $white;
+    text-align: center;
+  }
+  &__banner {
+    width: 50rem;
+  }
+  &__sub-text {
+    @include fonts(normal, 300, 1.313rem, inherit);
+    opacity: 0.75;
+    color: $white;
+  }
+  &__scroll {
+    width: 4rem;
+    height: 4rem;
+  }
+}
