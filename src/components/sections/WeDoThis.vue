@@ -1,15 +1,15 @@
 <template>
   <div class="we-do-this">
     <h1 class="we-do-this__title text-center">WE DO THIS</h1>
-    <p class="we-do-this__sub-title text-center w-50 mx-auto pb-5 mb-4">
+    <p class="we-do-this__sub-title text-center mx-auto pb-5 mb-4">
       We integrate data and experience to provide
       <span>meaning interactions</span>
       between brands and <br />
       your customers
     </p>
-    <div class="we-do-this__card d-flex justify-content-between">
+    <div class="we-do-this__card">
       <div
-        class="we-do-this__item"
+        class="we-do-this__item mb-3"
         v-for="(item, index) in listOfItems"
         :key="index"
       >

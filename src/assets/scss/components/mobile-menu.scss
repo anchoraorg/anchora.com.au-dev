@@ -1,0 +1,26 @@
+@import "~@/assets/scss/mixins";
+@import "~@/assets/scss/variables";
+.mobile-menu {
+  transition: all cubic-bezier(1,0,0,1.01) .5s;
+  background: $primary;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+  position: fixed;
+  transform: translateX(50rem);
+  &__container {
+    height: 80%;
+  }
+  &__item {
+    @include fonts(normal, 400, clamp(2rem, 2.5vw, 2.313rem), inherit);
+    letter-spacing: -0.63px;
+    line-height: 3.75rem;
+  }
+  &__get-in-touch {
+    @include fonts(normal, 400, clamp(0.8rem, 1vw, 0.813rem), inherit);
+    margin-top: 3.125rem;
+    padding: 1.125rem 1.813rem;
+    background: $secondary;
+    letter-spacing: 0.211rem;
+  }
+}
