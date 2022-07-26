@@ -1,11 +1,10 @@
 <template>
   <div class="preview-wrapper">
-    <Header />
     <div
       class="preview d-flex justify-content-center align-items-center h-auto"
     >
-      <div class="d-flex flex-column align-items-center">
-        <h1 class="mb-0 preview__main-text">We are</h1>
+      <div class="d-flex flex-column align-items-center mt-5 pt-5">
+        <h1 class="mb-0 mt-5 pt-5 preview__main-text">We are</h1>
         <img
           class="preview__banner"
           src="@/assets/images/general/banner.svg"
@@ -16,9 +15,13 @@
         </h2>
         <button
           @click="scrollToBottom"
-          class="preview__scroll bg-transparent border-0 mt-5"
+          class="preview__scroll bg-transparent border-0 mt-md-5"
         >
-          <img src="@/assets/images/general/preview-arrow.svg" alt="scroll" />
+          <img
+            class="w-100 h-100"
+            src="@/assets/images/general/preview-arrow.svg"
+            alt="scroll"
+          />
         </button>
       </div>
     </div>
@@ -27,10 +30,8 @@
 
 <script>
 import { defineComponent } from "vue";
-import Header from "@/components/general/Header";
 export default defineComponent({
   name: "Preview",
-  components: { Header },
   props: ["refWeDoThis"],
   setup() {
     const scrollToBottom = () => {

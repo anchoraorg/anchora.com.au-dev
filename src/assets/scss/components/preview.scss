@@ -1,7 +1,9 @@
 @import "~@/assets/scss/_variables.scss";
 @import "~@/assets/scss/_mixins.scss";
 .preview-wrapper {
+  position: relative;
   background-image: url("~@/assets/images/general/preview-bg.png");
+  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -9,21 +11,30 @@
 .preview {
   height: 80% !important;
   &__main-text {
-    @include fonts(normal, 300, 6.875rem, inherit);
+    @include fonts(normal, 300, clamp(3rem, 10.5vw, 6.875rem), inherit);
     opacity: 0.4;
     color: $white;
     text-align: center;
   }
   &__banner {
-    width: 50rem;
+    width: clamp(20rem, 60vw, 50rem);
   }
   &__sub-text {
-    @include fonts(normal, 300, 1.313rem, inherit);
+    @include fonts(normal, 300, clamp(0.9rem, 1.5vw, 1.313rem), inherit);
     opacity: 0.75;
     color: $white;
   }
   &__scroll {
-    width: 4rem;
-    height: 4rem;
+    width: clamp(2.5rem, 5vw, 4rem);
+    height: clamp(2.5rem, 5vw, 4rem);
+    animation: scroll 1.5s linear infinite alternate;
+  }
+}
+@keyframes scroll {
+ from {
+    transform: translateY(0rem);
+ }
+  to {
+    transform: translateY(1rem);
   }
 }

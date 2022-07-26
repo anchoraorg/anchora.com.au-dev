@@ -4,6 +4,10 @@
   background: $secondary;
   color: $white;
   padding-top: 13.313rem;
+  transition: all .5s;
+  @media (max-width: 996px) {
+    padding-top: 6.5rem;
+  }
   &__title {
     @include fonts(normal, 400, 0.813rem, inherit);
     opacity: 0.7;
@@ -12,25 +16,40 @@
     text-align: center;
   }
   &__sub-title {
-    @include fonts(normal, 400, 2.5rem, inherit);
+    @include fonts(normal, 400, clamp(1.2rem, 3.5vw, 2.5rem), inherit);
     text-align: center;
+    width: 50%;
+    transition: all .5s;
+    @media (max-width: 996px) {
+      width: 100%;
+      padding: 0 0.5rem;
+    }
     span {
       color: $blue-sky;
     }
   }
   &__card {
     padding: 0 6.375rem 13rem 6.375rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @media (max-width: 996px) {
+      padding: 0 3.375rem 7rem 3.375rem;
+    }
   }
   &__item {
+    @media (min-width: 996px) {
+      width: 25%;
+    }
     img {
       margin-bottom: 2.5rem;
     }
     p {
-      @include fonts(normal, 300, 1rem, inherit);
+      @include fonts(normal, 300, clamp(0.4rem, 2.5vw, 1rem), inherit);
     }
   }
   &__card-subtitle {
-    @include fonts(normal, 300, 1rem, inherit);
+    @include fonts(normal, 300, clamp(0.4rem, 2.5vw, 1rem), inherit);
     opacity: 0.65;
   }
 }

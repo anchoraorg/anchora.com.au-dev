@@ -9,11 +9,11 @@
         </div>
       </div>
     </div>
-    <div class="px-5">
+    <div class="px-5 mb-5">
       <div
         class="partners__about d-flex justify-content-center text-white flex-column"
       >
-        <p class="partners__title-bg w-50">
+        <p class="partners__title-bg">
           Lorem ipsum dolor sit amet, consectetur <span>adipiscing elit</span>.
           Vivamus feugiat nibh et magna sollicitudin, nec efficitur risus
           vehicula.

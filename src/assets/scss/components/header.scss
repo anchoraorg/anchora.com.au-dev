@@ -1,27 +1,95 @@
 @import "~@/assets/scss/mixins";
 @import "~@/assets/scss/variables";
+
 .header {
-  max-width: 1920px;
-  &__logo {
+  transition: all ease-in-out 0.3s;
+  padding: 1.688rem;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+
+  &__icon {
     width: 1.875rem;
   }
+
   &__list {
-    @include fonts(normal, 300, 1.125rem, inherit);
+    @include fonts(normal, 300, clamp(0.8rem, 1.5vw, 1.125rem), inherit);
+
     a {
-      color: $white !important;
+      color: $white;
+      &:after {
+        content: '';
+        width: 0;
+        display: block;
+        height: 2px;
+        background: $primary;
+        transition: all ease-in 0.2s;
+      }
       &:active, &:focus {
         border: none;
         outline: none;
       }
+      &:hover {
+        &:after {
+          width: 100%;
+        }
+      }
     }
   }
+
+  &__title {
+    color: $secondary;
+    @include fonts(normal, 700, clamp(1.4rem, 2vw, 2.25rem), inherit);
+  }
+
   &__button {
     button {
-      @include fonts(normal, 700, 0.813rem, inherit);
+      @include fonts(normal, 300, clamp(0.5rem, 1.5vw, 0.813rem), inherit);
+      white-space: nowrap;
       padding: 1.125rem 1.75rem;
       letter-spacing: 0.211rem;
       text-align: center;
       background-color: #F1B437;
+      @media (max-width: 996px) {
+        padding: 0.7rem 0.8rem;
+      }
     }
+  }
+
+  &__menu {
+    height: 1.2rem;
+
+    &:hover {
+      span:nth-child(2) {
+        transition: all .3s;
+        transform: translateX(-10px);
+      }
+    }
+
+    .header__item-menu {
+      transition: all .3s;
+      width: 1.6rem;
+      height: 0.15rem;
+      background: $white;
+    }
+  }
+
+  .open-menu {
+    transform: translateX(0);
+    transition: all cubic-bezier(1, 0, 0, 1.01) .5s;
+  }
+}
+
+.active-header {
+  transition: all ease-in-out 0.3s;
+  background: $white !important;
+
+  a {
+    color: $secondary;
+  }
+
+  .header__item-menu {
+    background: $secondary;
   }
 }
