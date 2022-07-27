@@ -4,7 +4,8 @@
     class="d-flex header justify-content-between align-items-center mx-auto"
   >
     <MobileMenu
-      @close-menu="mobileMenu = $event"
+      @close-menu="closeMobileMenu"
+      @open-modal="$emit('open-modal')"
       :class="{ 'open-menu': mobileMenu }"
     />
     <div class="header__logo d-flex align-items-center">
@@ -24,7 +25,7 @@
       class="d-md-flex d-none justify-content-between align-items-center header__list mb-0 ps-0"
     >
       <li
-        class="header__item px-lg-5 px-md-3 px-1 text-nowrap"
+        class="header__item text-nowrap d-flex align-items-center"
         v-for="(item, index) in navList"
         :key="index"
       >
@@ -34,11 +35,16 @@
       </li>
     </ul>
     <div class="header__button d-none d-md-flex justify-content-end">
-      <button class="btn rounded-pill text-white">GET IN TOUCH</button>
+      <button
+        @click="$emit('open-modal')"
+        class="btn rounded-pill border-0 text-white"
+      >
+        GET IN TOUCH
+      </button>
     </div>
     <button
       class="header__menu bg-transparent border-0 shadow-none d-flex d-md-none flex-column justify-content-between"
-      @click="mobileMenu = !mobileMenu"
+      @click="openMobileMenu"
     >
       <span class="header__item-menu d-block rounded-pill" />
       <span class="header__item-menu d-block rounded-pill" />
@@ -49,10 +55,11 @@
 
 <script>
 import { defineComponent, ref, onMounted, onUnmounted } from "vue";
-import MobileMenu from "@/components/sections/MobileMenu";
+import MobileMenu from "@/components/general/MobileMenu";
 export default defineComponent({
   name: "Header",
   components: { MobileMenu },
+  emits: ["open-menu", "open-modal"],
   setup() {
     const stickyHeaderOffset = 50;
     const navList = ref([
@@ -70,6 +77,14 @@ export default defineComponent({
         ? headerElement.classList.add("active-header")
         : headerElement.classList.remove("active-header");
     };
+    const openMobileMenu = () => {
+      document.body.classList.add("overflow-hidden");
+      mobileMenu.value = !mobileMenu.value;
+    };
+    const closeMobileMenu = () => {
+      document.body.classList.remove("overflow-hidden");
+      mobileMenu.value = false;
+    };
     onMounted(() => {
       window.addEventListener("scroll", scrollListener);
     });
@@ -81,6 +96,8 @@ export default defineComponent({
       mobileMenu,
       pageYOffset,
       stickyHeaderOffset,
+      openMobileMenu,
+      closeMobileMenu,
     };
   },
 });

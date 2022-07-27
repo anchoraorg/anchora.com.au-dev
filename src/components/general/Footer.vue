@@ -10,7 +10,7 @@
         <h2 class="footer__title mb-0">Anchora</h2>
       </div>
       <div class="footer__top-right">
-        <p class="mb-0 footer__top-description">
+        <p class="mb-0 footer__top-description d-none d-md-block">
           Strategic Marketing Technology Consultancy
         </p>
       </div>
@@ -28,14 +28,14 @@
           </p>
         </div>
         <div class="ms-5 ps-5">
-          <p class="footer__bottom-title mb-0">VISIT US</p>
+          <p class="footer__bottom-title mb-0">HOURS</p>
           <p class="footer__bottom-subtitle">
             Mon to Fri: 9:00 am – 5:00 pm <br />Sat to Sun: Closed
           </p>
         </div>
       </div>
       <div
-        class="footer__bottom-right d-flex justify-content-md-start justify-content-between"
+        class="footer__bottom-right d-none d-md-flex justify-content-md-start justify-content-between"
       >
         <ul class="footer__bottom-list p-0">
           <li class="footer__bottom-item">PHILOSOPHY</li>
@@ -48,6 +48,10 @@
           <li class="footer__bottom-item">LINKEDIN</li>
         </ul>
       </div>
+      <p class="mb-0 footer__top-description d-block d-md-none my-4">
+        Strategic Marketing Technology <br />
+        Consultancy
+      </p>
     </div>
   </div>
 </template>
