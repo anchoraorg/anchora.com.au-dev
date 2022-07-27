@@ -1,9 +1,13 @@
 <template>
-  <div v-bind="$attrs" class="mobile-menu d-md-none top-0 start-0 p-4">
+  <div
+    v-bind="$attrs"
+    :class="{ 'open-menu': isMobileMenuOpen }"
+    class="mobile-menu d-md-none top-0 start-0 p-4"
+  >
     <div class="d-flex justify-content-between">
       <img src="@/assets/images/mobile/logo.svg" alt="logo" />
       <button
-        @click="$emit('close-menu', false)"
+        @click="closeMobileMenu"
         class="bg-transparent border-0 shadow-none"
       >
         <img src="@/assets/images/mobile/cross.svg" alt="logo" />
@@ -14,7 +18,7 @@
     >
       <ul class="mobile-menu__list p-0">
         <li
-          @click="$emit('close-menu', false)"
+          @click="closeMobileMenu"
           class="mobile-menu__item text-center text-white"
         >
           <a class="text-decoration-none text-white" href="#we-do-this"
@@ -22,13 +26,13 @@
           >
         </li>
         <li
-          @click="$emit('close-menu', false)"
+          @click="closeMobileMenu"
           class="mobile-menu__item text-center text-white"
         >
           <a class="text-decoration-none text-white" href="#clients">Clients</a>
         </li>
         <li
-          @click="$emit('close-menu', false)"
+          @click="closeMobileMenu"
           class="mobile-menu__item text-center text-white"
         >
           <a class="text-decoration-none text-white" href="#accelerators"
@@ -36,7 +40,7 @@
           >
         </li>
         <li
-          @click="$emit('close-menu')"
+          @click="closeMobileMenu"
           class="mobile-menu__item text-center text-white"
         >
           <a class="text-decoration-none text-white" href="#life-anchora"
@@ -45,7 +49,7 @@
         </li>
       </ul>
       <button
-        @click="$emit('open-modal')"
+        @click="openContactForm"
         class="mobile-menu__get-in-touch border-0 shadow-none rounded-pill text-white"
       >
         GET IN TOUCH
@@ -55,10 +59,34 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { computed, defineComponent } from "vue";
+import { useStore } from "vuex";
+import {
+  SET_CONTACT_FORM_DATA,
+  SET_MOBILE_MENU_DATA,
+  SET_BODY_OVERLAY,
+} from "@/store";
+
 export default defineComponent({
   name: "MobileMenu",
-  emits: ["open-menu", "close-menu", "open-modal"],
+  setup() {
+    const store = useStore();
+    const isMobileMenuOpen = computed(() => store.getters["isMobileMenuOpen"]);
+
+    const openContactForm = () => {
+      store.commit(SET_CONTACT_FORM_DATA, true);
+      store.commit(SET_BODY_OVERLAY, true);
+    };
+
+    const closeMobileMenu = () => {
+      store.commit(SET_MOBILE_MENU_DATA, false);
+    };
+    return {
+      openContactForm,
+      closeMobileMenu,
+      isMobileMenuOpen,
+    };
+  },
 });
 </script>
 

@@ -1,5 +1,6 @@
 <template>
   <div
+    :class="{ 'contact-open': isContactFormOpen }"
     class="contact-form position-fixed bg-white d-flex flex-lg-row flex-column flex-column-reverse overflow-hidden"
   >
     <div class="contact-form__form">
@@ -34,7 +35,7 @@
         alt="logo"
       />
       <button
-        @click="$emit('close-modal')"
+        @click="closeContactForm"
         class="bg-transparent m-4 border-0 shadow-none top-0 end-0 position-absolute"
       >
         <img src="@/assets/images/mobile/cross.svg" alt="close" />
@@ -44,28 +45,26 @@
 </template>
 
 <script>
-import { defineComponent, watch } from "vue";
+import { computed, defineComponent } from "vue";
+import { useStore } from "vuex";
+import { SET_CONTACT_FORM_DATA, SET_BODY_OVERLAY } from "@/store";
+
 export default defineComponent({
   name: "ContactForm",
-  props: {
-    isModalOpen: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  setup(props) {
-    const bodyOverflow = (state) => {
-      state
-        ? document.body.classList.add("body-overlay")
-        : document.body.classList.remove("body-overlay");
-    };
-    watch(
-      () => props.isModalOpen,
-      (val) => {
-        bodyOverflow(val);
-      },
-      { immediate: true }
+  setup() {
+    const store = useStore();
+    const isContactFormOpen = computed(
+      () => store.getters["isContactFormOpen"]
     );
+
+    const closeContactForm = () => {
+      store.commit(SET_CONTACT_FORM_DATA, false);
+      store.commit(SET_BODY_OVERLAY, false);
+    };
+    return {
+      isContactFormOpen,
+      closeContactForm,
+    };
   },
 });
 </script>

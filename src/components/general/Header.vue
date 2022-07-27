@@ -3,11 +3,7 @@
     id="header"
     class="d-flex header justify-content-between align-items-center mx-auto"
   >
-    <MobileMenu
-      @close-menu="closeMobileMenu"
-      @open-modal="$emit('open-modal')"
-      :class="{ 'open-menu': mobileMenu }"
-    />
+    <MobileMenu />
     <div class="header__logo d-flex align-items-center">
       <a href="#">
         <img
@@ -36,7 +32,7 @@
     </ul>
     <div class="header__button d-none d-md-flex justify-content-end">
       <button
-        @click="$emit('open-modal')"
+        @click="openContactForm"
         class="btn rounded-pill border-0 text-white"
       >
         GET IN TOUCH
@@ -56,20 +52,34 @@
 <script>
 import { defineComponent, ref, onMounted, onUnmounted } from "vue";
 import MobileMenu from "@/components/general/MobileMenu";
+import { useStore } from "vuex";
+import {
+  SET_CONTACT_FORM_DATA,
+  SET_MOBILE_MENU_DATA,
+  SET_BODY_OVERLAY,
+} from "@/store";
+
 export default defineComponent({
   name: "Header",
   components: { MobileMenu },
-  emits: ["open-menu", "open-modal"],
   setup() {
+    const store = useStore();
     const stickyHeaderOffset = 50;
+    const pageYOffset = ref(null);
     const navList = ref([
       { title: "What we do", url: "#we-do-this" },
       { title: "Clients", url: "#clients" },
       { title: "Accelerators", url: "#accelerators" },
       { title: "Life@Anchora", url: "#life-anchora" },
     ]);
-    const mobileMenu = ref(false);
-    const pageYOffset = ref(null);
+    const openContactForm = () => {
+      store.commit(SET_CONTACT_FORM_DATA, true);
+      store.commit(SET_BODY_OVERLAY, true);
+    };
+
+    const openMobileMenu = () => {
+      store.commit(SET_MOBILE_MENU_DATA, true);
+    };
     const scrollListener = () => {
       const headerElement = document.getElementById("header");
       pageYOffset.value = window.pageYOffset;
@@ -77,27 +87,19 @@ export default defineComponent({
         ? headerElement.classList.add("active-header")
         : headerElement.classList.remove("active-header");
     };
-    const openMobileMenu = () => {
-      document.body.classList.add("overflow-hidden");
-      mobileMenu.value = !mobileMenu.value;
-    };
-    const closeMobileMenu = () => {
-      document.body.classList.remove("overflow-hidden");
-      mobileMenu.value = false;
-    };
     onMounted(() => {
       window.addEventListener("scroll", scrollListener);
     });
     onUnmounted(() => {
       window.removeEventListener("scroll", scrollListener);
     });
+
     return {
       navList,
-      mobileMenu,
       pageYOffset,
       stickyHeaderOffset,
       openMobileMenu,
-      closeMobileMenu,
+      openContactForm,
     };
   },
 });

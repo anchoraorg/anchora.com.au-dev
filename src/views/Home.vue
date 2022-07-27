@@ -1,23 +1,18 @@
 <template>
   <div class="home">
-    <Header @open-modal="isModalOpen = true" />
+    <Header />
     <Preview />
     <WeDoThis id="we-do-this" />
     <Partners id="clients" />
     <OurProducts id="accelerators" />
     <OurTeam id="life-anchora" />
     <Footer />
-    <ContactForm
-      :is-modal-open="isModalOpen"
-      @close-modal="isModalOpen = false"
-      :class="{ 'contact-open': isModalOpen }"
-      id="contact-form"
-    />
+    <ContactForm id="contact-form" />
   </div>
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 import Preview from "@/components/sections/Preview";
 import WeDoThis from "@/components/sections/WeDoThis";
 import Partners from "@/components/sections/Partners";
@@ -38,13 +33,6 @@ export default defineComponent({
     WeDoThis,
     Preview,
     ContactForm,
-  },
-
-  setup() {
-    const isModalOpen = ref(false);
-    return {
-      isModalOpen,
-    };
   },
 });
 </script>
