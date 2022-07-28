@@ -12,17 +12,26 @@
   max-height: 70rem;
   transition: all cubic-bezier(1,0,.15,.83) 0.4s;
   z-index: 4;
-  @media (max-width: 996px) {
+  @media (max-width: 992px) {
     width: 90vw;
   }
   &__form {
-    padding: clamp(3rem, 10vh, 6.563rem) clamp(3rem, 5vw, 5.75rem);
+    padding: clamp(2rem, 5vw, 6.563rem) clamp(1rem, 4vw, 5.75rem);
     width: 50%;
-    @media (max-width: 996px) {
-      padding: 1.5rem 1rem 0 1.5rem;
+    @media (max-width: 992px) {
       width: 100%;
-      height: 70%;
+      height: 75%;
     }
+  }
+  &__text {
+    height: 15%;
+  }
+  &__fields {
+    padding: clamp(2rem, 4vw, 4.375rem) 0;
+    height: 75%;
+  }
+  &__send-box {
+    height: 15%;
   }
   &__title {
     @include fonts(normal, 400, clamp(1.5rem, 3vw, 2.5rem), inherit);
@@ -31,15 +40,6 @@
   &__description {
     @include fonts(normal, 300, clamp(0.7rem, 3vw, 1rem), inherit);
     opacity: 0.5849;
-  }
-  &__input {
-    @include fonts(normal, 400, clamp(0.8rem, 1vh, 0.875rem), inherit);
-    border-bottom: 1px solid $grey !important;
-    color: $nobel;
-    padding-bottom: 0.625rem;
-    &:focus, &:hover {
-      border-bottom: 1px solid $primary !important;
-    }
   }
   &__send {
     @include fonts(normal, 400, clamp(0.8rem, 1vh, 0.813rem), inherit);
@@ -52,13 +52,19 @@
     background-image: url("~@/assets/images/contact-form/contact-bg.png");
     background-repeat: no-repeat;
     background-size: cover;
-    @media (max-width: 996px) {
+    @media (max-width: 992px) {
       width: 100%;
-      height: 30%;
+      height: 25%;
     }
   }
   &__background-img {
     width: clamp(5rem, 10vw, 10rem);
+  }
+  &__close-form {
+    margin: 2.5rem 2.125rem;
+    @media (max-width: 992px) {
+      margin: 1.75rem 1.313rem;
+    }
   }
 }
 .contact-open {
