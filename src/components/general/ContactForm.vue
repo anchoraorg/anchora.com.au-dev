@@ -20,7 +20,7 @@
         <AInput v-model="userState.user_phone" placeholder="Phone" />
       </div>
       <div
-        class="contact-form__send-box d-flex justify-content-lg-start justify-content-center align-items-center mx-auto"
+        class="contact-form__send-box d-flex justify-content-lg-start justify-content-center align-items-center mx-lg-0 mx-auto"
       >
         <button
           class="contact-form__send h-auto text-white border-0 shadow-none rounded-pill my-lg-3 my-4"

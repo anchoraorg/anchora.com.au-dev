@@ -13,35 +13,32 @@
     width: 1.875rem;
   }
 
+  &__logo {
+    a:focus {
+      outline: none;
+    }
+  }
+
   &__list {
     @include fonts(normal, 300, clamp(0.8rem, 1.5vw, 1.125rem), inherit);
 
     a {
       color: $white;
       padding: 0 clamp(1rem, 2vw, 2rem);
-      &:after {
-        content: '';
-        width: 0;
-        display: block;
-        height: 2px;
-        background: $primary;
-        transition: all ease-in 0.2s;
-      }
+      transition: all ease-in 0.2s;
       &:active, &:focus {
         border: none;
         outline: none;
       }
       &:hover {
-        &:after {
-          width: 100%;
-        }
+        color: $primary;
       }
     }
   }
 
   &__title {
     color: $secondary;
-    @include fonts(normal, 700, clamp(1.4rem, 2vw, 2.25rem), inherit);
+    @include fonts(normal, 700, clamp(1.4rem, 3vw, 3rem), inherit);
   }
 
   &__button {

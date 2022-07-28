@@ -5,17 +5,16 @@
   >
     <MobileMenu />
     <div class="header__logo d-flex align-items-center">
-      <a href="#">
+      <router-link to="/" class="text-decoration-none d-flex align-items-center">
         <img
           class="header__icon"
           src="@/assets/images/merch/anchora/tshirt-front.png"
           alt="logo"
-          @click="window.scrollTo()"
         />
-      </a>
-      <span v-if="pageYOffset > stickyHeaderOffset" class="header__title"
-        >Anchora</span
-      >
+        <span v-if="pageYOffset > stickyHeaderOffset" class="header__title">
+          Anchora
+        </span>
+      </router-link>
     </div>
     <ul
       class="d-md-flex d-none justify-content-between align-items-center header__list mb-0 ps-0"
