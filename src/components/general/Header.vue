@@ -5,7 +5,10 @@
   >
     <MobileMenu />
     <div class="header__logo d-flex align-items-center">
-      <router-link to="/" class="text-decoration-none d-flex align-items-center">
+      <router-link
+        to="/"
+        class="text-decoration-none d-flex align-items-center"
+      >
         <img
           class="header__icon"
           src="@/assets/images/merch/anchora/tshirt-front.png"
