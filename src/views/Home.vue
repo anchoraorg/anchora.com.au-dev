@@ -7,6 +7,7 @@
     <OurProducts id="accelerators" />
     <OurTeam id="life-anchora" />
     <Footer />
+    <ContactForm id="contact-form" />
   </div>
 </template>
 
@@ -19,6 +20,8 @@ import OurProducts from "@/components/sections/OurProducts";
 import OurTeam from "@/components/sections/OurTeam";
 import Footer from "@/components/general/Footer";
 import Header from "@/components/general/Header";
+import ContactForm from "@/components/general/ContactForm";
+
 export default defineComponent({
   name: "Home",
   components: {
@@ -29,6 +32,7 @@ export default defineComponent({
     Partners,
     WeDoThis,
     Preview,
+    ContactForm,
   },
 });
 </script>

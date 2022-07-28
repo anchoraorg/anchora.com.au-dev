@@ -5,7 +5,7 @@
   color: $white;
   transition: all .5s;
   @media (max-width: 996px) {
-    padding-top: 6.5rem;
+    padding-top: 4rem;
   }
   &__title {
     @include fonts(normal, 700, clamp(0.7rem, 1.5vw, 0.813rem), inherit);
@@ -25,11 +25,11 @@
     opacity: 0.5849;
   }
   &__container {
-    padding: clamp(0rem, 10vw, 8.375rem) clamp(1.5rem ,10vw, 10.25rem);
+    padding: clamp(2rem, 10vw, 8.375rem) clamp(1.5rem ,10vw, 10.25rem);
   }
   &__background {
     width: 50%;
-    height: 25rem;
+    height: clamp(13rem, 25vw, 25rem);
     background-image: url("~@/assets/images/team/team-member.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -83,16 +83,18 @@
   &__about {
     position: relative;
     background-image: url("~@/assets/images/team/bg-team.png");
-    background-size: 100% 100%;
+    background-size: cover;
     margin-top: 7.8rem;
     padding: 10rem 9.5rem;
+    border-radius: 1rem;
     @media (max-width: 996px) {
       padding: 5rem 1.5rem 0  1.5rem;
+      margin-top: 4rem;
     }
     &:before {
       content: '';
-      width: 4.375rem;
-      height: 4.375rem;
+      width: clamp(2rem ,4.5vw ,4.375rem);
+      height: clamp(2rem ,4.5vw ,4.375rem);
       background: $bleached-ceder;
       position: absolute;
       top: 0;

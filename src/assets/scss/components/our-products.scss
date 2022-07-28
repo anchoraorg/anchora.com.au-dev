@@ -6,7 +6,7 @@
   padding: clamp(1rem, 10vw, 13.313rem) clamp(1.5rem ,10vw, 10.25rem);
   transition: all .5s;
   @media (max-width: 996px) {
-    padding-top: 6.5rem;
+    padding: 4rem 1.75rem 2rem 1.75rem;
   }
   &__title {
     @include fonts(normal, 400, 0.813rem, inherit);
@@ -30,11 +30,15 @@
     opacity: 0.5849;
   }
   &__cards {
-    margin-top: 7rem;
+    margin-top: clamp(4.5rem, 7vw, 7rem);
   }
   &__item {
-    width: 300px;
+    width: 100%;
     height: 300px;
+    max-width: 350px;
+    &:last-child {
+      margin-bottom: 0;
+    }
     @media (max-width: 996px) {
       margin-bottom: 2rem;
     }

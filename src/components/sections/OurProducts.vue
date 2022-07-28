@@ -13,7 +13,7 @@
       <div
         v-for="(item, index) in cardItems"
         :key="index"
-        class="our-products__item p-3 mx-lg-4 mx-auto rounded d-flex flex-column justify-content-between"
+        class="our-products__item p-3 mx-lg-4 rounded d-flex flex-column justify-content-between"
         :style="{ backgroundColor: item.color }"
       >
         <p class="our-products__number">{{ item.number }}</p>

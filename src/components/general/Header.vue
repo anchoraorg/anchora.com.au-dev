@@ -3,10 +3,7 @@
     id="header"
     class="d-flex header justify-content-between align-items-center mx-auto"
   >
-    <MobileMenu
-      @close-menu="mobileMenu = $event"
-      :class="{ 'open-menu': mobileMenu }"
-    />
+    <MobileMenu />
     <div class="header__logo d-flex align-items-center">
       <a href="#">
         <img
@@ -24,7 +21,7 @@
       class="d-md-flex d-none justify-content-between align-items-center header__list mb-0 ps-0"
     >
       <li
-        class="header__item px-lg-5 px-md-3 px-1 text-nowrap"
+        class="header__item text-nowrap d-flex align-items-center"
         v-for="(item, index) in navList"
         :key="index"
       >
@@ -34,11 +31,16 @@
       </li>
     </ul>
     <div class="header__button d-none d-md-flex justify-content-end">
-      <button class="btn rounded-pill text-white">GET IN TOUCH</button>
+      <button
+        @click="openContactForm"
+        class="btn rounded-pill border-0 text-white"
+      >
+        GET IN TOUCH
+      </button>
     </div>
     <button
       class="header__menu bg-transparent border-0 shadow-none d-flex d-md-none flex-column justify-content-between"
-      @click="mobileMenu = !mobileMenu"
+      @click="openMobileMenu"
     >
       <span class="header__item-menu d-block rounded-pill" />
       <span class="header__item-menu d-block rounded-pill" />
@@ -49,20 +51,35 @@
 
 <script>
 import { defineComponent, ref, onMounted, onUnmounted } from "vue";
-import MobileMenu from "@/components/sections/MobileMenu";
+import MobileMenu from "@/components/general/MobileMenu";
+import { useStore } from "vuex";
+import {
+  SET_CONTACT_FORM_DATA,
+  SET_MOBILE_MENU_DATA,
+  SET_BODY_OVERLAY,
+} from "@/store";
+
 export default defineComponent({
   name: "Header",
   components: { MobileMenu },
   setup() {
+    const store = useStore();
     const stickyHeaderOffset = 50;
+    const pageYOffset = ref(null);
     const navList = ref([
       { title: "What we do", url: "#we-do-this" },
       { title: "Clients", url: "#clients" },
       { title: "Accelerators", url: "#accelerators" },
       { title: "Life@Anchora", url: "#life-anchora" },
     ]);
-    const mobileMenu = ref(false);
-    const pageYOffset = ref(null);
+    const openContactForm = () => {
+      store.commit(SET_CONTACT_FORM_DATA, true);
+      store.commit(SET_BODY_OVERLAY, true);
+    };
+
+    const openMobileMenu = () => {
+      store.commit(SET_MOBILE_MENU_DATA, true);
+    };
     const scrollListener = () => {
       const headerElement = document.getElementById("header");
       pageYOffset.value = window.pageYOffset;
@@ -76,11 +93,13 @@ export default defineComponent({
     onUnmounted(() => {
       window.removeEventListener("scroll", scrollListener);
     });
+
     return {
       navList,
-      mobileMenu,
       pageYOffset,
       stickyHeaderOffset,
+      openMobileMenu,
+      openContactForm,
     };
   },
 });
