@@ -10,7 +10,7 @@ on:
     types: [opened, reopened, synchronize]
 
 jobs:
-  deploy:
+  build:
     if: "!contains(github.event.head_commit.message, 'skip ci')"
     runs-on: ubuntu-latest
     env:
@@ -27,7 +27,28 @@ jobs:
       
     - name: Install & Build
       run: |
-        npm install
+        npm ci
+        npm run build
+
+  deploy:
+    if: "!contains(github.event.head_commit.message, 'skip ci') && github.ref == 'refs/heads/master'"
+    needs: [build]
+    runs-on: ubuntu-latest
+    env:
+      NODE_ENV: production 
+      APPLICATION_ID: ${{ secrets.APPLICATION_ID }}
+      API_KEY: ${{ secrets.API_KEY }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+      
+    - name: Install & Build
+      run: |
+        npm ci
         npm run build
 
     - name: Deploy
