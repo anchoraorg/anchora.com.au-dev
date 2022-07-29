@@ -11,7 +11,6 @@
     "@popperjs/core": "^2.11.5",
     "bootstrap": "^5.2.0",
     "core-js": "^3.6.5",
-    "sass": "^1.54.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.2"
@@ -27,8 +26,8 @@
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.0.0",
-    "node-sass": "^4.14.1",
     "prettier": "^2.2.1",
+    "sass": "^1.54.0",
     "sass-loader": "^8.0.2"
   },
   "eslintConfig": {

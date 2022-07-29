@@ -24,15 +24,14 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: '16'
-        
-    - name: NPM Install
-      run: npm install
+      
+    - name: Install & Build
+      run: |
+        npm install
+        npm run build
 
-    - name: NPM Build
-      run: npm run build
-
-    - name: Deploy to gh-pages
-      uses: JamesIves/github-pages-deploy-action@v4.2.5
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v4
       with:
         branch: gh-pages
-        folder: build
+        folder: dist
