@@ -1,0 +1,68 @@
+@import "~@/assets/scss/_variables.scss";
+@import "~@/assets/scss/_mixins.scss";
+.partners {
+  &__list {
+    padding: 9.5rem 6.375rem 13rem 6.375rem;
+    @media (max-width: 996px) {
+      padding: 4.5rem 3.375rem 6.5rem 3.375rem;
+    }
+  }
+  &__subtitle {
+    @include fonts(normal, 500, 0.813rem, inherit);
+    opacity: 0.7;
+    letter-spacing: 0.211rem;
+    padding-bottom: 1.5rem;
+  }
+  &__title {
+    @include fonts(normal, 500, clamp(1.5rem, 3.5vw, 2.5rem), inherit);
+  }
+  &__wrapper-logo {
+    margin-top: clamp(3rem, 10vw, 10rem);
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(13.75rem, 1fr));
+  }
+  &__logo {
+    margin: 0 10rem 5rem 0;
+    @media (max-width: 996px) {
+      margin: 3rem 0;
+    }
+  }
+  &__about {
+    position: relative;
+    background-image: url("~@/assets/images/partners/sea.png");
+    background-attachment: fixed;
+    border-radius: 1rem;
+    background-size: 100% 100%;
+    padding: 10rem 9.5rem;
+    @media (max-width: 996px) {
+      padding: 5rem 1.5rem 0  1.5rem;
+    }
+    &:before {
+      content: '';
+      width: clamp(2rem ,4.5vw ,4.375rem);
+      height: clamp(2rem ,4.5vw ,4.375rem);
+      background: $white;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+  &__title-bg{
+    width: 50%;
+    @include fonts(normal, 400, clamp(0.938rem, 2.5vw, 2.5rem), inherit);
+    span {
+      color: $blue-sky;
+    }
+    @media (max-width: 996px) {
+      width: 100%;
+    }
+  }
+  &__author {
+    @include fonts(normal, 400, 0.688rem, inherit);
+    color: $primary;
+    padding-top: clamp(2rem, 7vw, 6.25rem);
+    letter-spacing: 0.179rem;
+  }
+}

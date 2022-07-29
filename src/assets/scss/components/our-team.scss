@@ -1,0 +1,121 @@
+@import "~@/assets/scss/_variables.scss";
+@import "~@/assets/scss/_mixins.scss";
+.our-team {
+  background: $bleached-ceder;
+  color: $white;
+  transition: all .5s;
+  @media (max-width: 996px) {
+    padding-top: 4rem;
+  }
+  &__title {
+    @include fonts(normal, 700, clamp(0.7rem, 1.5vw, 0.813rem), inherit);
+    opacity: 0.7;
+    padding-top: clamp(2rem, 8vw, 7.313rem);
+    margin-bottom: 1.188rem;
+  }
+  &__sub-title {
+    @include fonts(normal, 400, clamp(1.7rem, 2.5vw, 2.5rem), inherit);
+    margin-bottom: 1.188rem;
+    span {
+      color: $orange-high;
+    }
+  }
+  &__description {
+    @include fonts(normal, 300, clamp(0.9rem, 1.5vw, 1rem), inherit);
+    opacity: 0.5849;
+  }
+  &__container {
+    padding: clamp(2rem, 10vw, 8.375rem) clamp(1.5rem ,10vw, 10.25rem);
+  }
+  &__background {
+    width: 50%;
+    height: clamp(13rem, 25vw, 25rem);
+    background-image: url("~@/assets/images/team/team-member.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 1rem ;
+    @media (max-width: 996px) {
+      width: 100%;
+    }
+  }
+  &__accordion {
+    width: 50%;
+    @media (max-width: 996px) {
+      width: 100%;
+    }
+  }
+  &__accordion-item {
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255,255,255, 0.179392);
+    &:hover {
+      .our-team__accordion-logo {
+        filter: grayscale(0) !important;
+      }
+      .our-team__accordion-title {
+        color: $white !important;
+      }
+    }
+  }
+  &__accordion-logo {
+    transition: all 0.3s;
+    width: 1.3rem;
+    height: 1.3rem;
+    filter: grayscale(100%);
+  }
+  &__accordion-title {
+    @include fonts(normal, 400, clamp(1rem, 1.5vw, 1.5rem), inherit);
+    color: $salt-box;
+    transition: all 0.3s;
+  }
+  &__accordion-description {
+    @include fonts(normal, 300, clamp(0.9rem, 1.5vw, 1rem), inherit);
+    color: $salt-box;
+    transition: all 0.3s;
+  }
+  &__active-item {
+    .our-team__accordion-logo {
+      filter: grayscale(0) !important;
+    }
+    .our-team__accordion-title {
+      color: $white !important;
+    }
+  }
+  &__about {
+    position: relative;
+    background-image: url("~@/assets/images/team/bg-team.png");
+    background-size: cover;
+    margin-top: 7.8rem;
+    padding: 10rem 9.5rem;
+    border-radius: 1rem;
+    @media (max-width: 996px) {
+      padding: 5rem 1.5rem 0  1.5rem;
+      margin-top: 4rem;
+    }
+    &:before {
+      content: '';
+      width: clamp(2rem ,4.5vw ,4.375rem);
+      height: clamp(2rem ,4.5vw ,4.375rem);
+      background: $bleached-ceder;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+  &__title-bg{
+    width: 50%;
+    @include fonts(normal, 400, clamp(0.938rem, 2.5vw, 2.125rem), inherit);
+    span {
+      color: $blue-sky;
+    }
+    @media (max-width: 996px) {
+      width: 100%;
+    }
+  }
+  &__author {
+    @include fonts(normal, 400, 0.688rem, inherit);
+    color: $primary;
+    padding-top: clamp(2rem, 7vw, 6.25rem);
+    letter-spacing: 0.179rem;
+  }
+}

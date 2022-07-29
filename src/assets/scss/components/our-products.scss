@@ -1,0 +1,70 @@
+@import "~@/assets/scss/_variables.scss";
+@import "~@/assets/scss/_mixins.scss";
+.our-products {
+  background: $secondary;
+  color: $white;
+  padding: clamp(1rem, 10vw, 13.313rem) clamp(1.5rem ,10vw, 10.25rem);
+  transition: all .5s;
+  @media (max-width: 996px) {
+    padding: 4rem 1.75rem 2rem 1.75rem;
+  }
+  &__title {
+    @include fonts(normal, 400, 0.813rem, inherit);
+    opacity: 0.7;
+    color: $white;
+    letter-spacing: 0.211rem;
+  }
+  &__sub-title {
+    width: 50%;
+    @include fonts(normal, 400, clamp(1.5rem, 3.5vw, 2.5rem), inherit);
+    span {
+      color: $primary;
+    }
+    @media (max-width: 996px) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  &__description {
+    @include fonts(normal, 300, clamp(.8rem, 1.5vw, 1rem), inherit);
+    opacity: 0.5849;
+  }
+  &__cards {
+    margin-top: clamp(4.5rem, 7vw, 7rem);
+  }
+  &__item {
+    width: 100%;
+    height: 300px;
+    max-width: 350px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @media (max-width: 996px) {
+      margin-bottom: 2rem;
+    }
+    &:nth-child(2) {
+      margin-top: -4rem !important;
+      transition: all .5s;
+      @media (max-width: 996px) {
+        margin-top: 0 !important;
+      }
+    }
+    &:nth-child(3) {
+      margin-top: -8rem !important;
+      transition: all .5s;
+      @media (max-width: 996px) {
+        margin-top: 0 !important;
+      }
+    }
+  }
+  &__item-title {
+    @include fonts(normal, 400, clamp(1rem, 2vw, 2rem), inherit);
+  }
+  &__item-description {
+    @include fonts(normal, 300, clamp(0.7rem, 1vw, 0.875rem), inherit);
+  }
+  &__number {
+    @include fonts(normal, 400, clamp(1rem, 2vw, 1.875rem), inherit);
+    opacity: 0.443339;
+  }
+}

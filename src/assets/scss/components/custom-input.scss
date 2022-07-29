@@ -1,0 +1,11 @@
+@import "~@/assets/scss/_variables.scss";
+@import "~@/assets/scss/_mixins.scss";
+.custom-input {
+  @include fonts(normal, 400, clamp(0.8rem, 1vh, 0.875rem), inherit);
+  border-bottom: 1px solid $grey !important;
+  color: $nobel;
+  padding-bottom: 0.625rem;
+  &:focus, &:hover {
+    border-bottom: 1px solid $primary !important;
+  }
+}
