@@ -1,4 +1,4 @@
-# anchora.com.au
+# Anchora
 
 ## Project setup
 ```
