@@ -1,5 +1,9 @@
 # Anchora
 
+## Prerequisites
+
+Node 16
+
 ## Project setup
 ```
 npm install
