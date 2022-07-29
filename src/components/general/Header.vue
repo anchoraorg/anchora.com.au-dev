@@ -11,7 +11,7 @@
       >
         <img
           class="header__icon"
-          src="@/assets/images/merch/anchora/tshirt-front.png"
+          src="@/assets/images/anchora-logo-square-transparent.png"
           alt="logo"
         />
         <span v-if="pageYOffset > stickyHeaderOffset" class="header__title">

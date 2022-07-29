@@ -20,7 +20,7 @@
           <div class="our-team__accordion-header d-flex">
             <img
               class="our-team__accordion-logo me-2"
-              src="@/assets/images/merch/anchora/tshirt-front.png"
+              src="@/assets/images/anchora-logo-square-transparent.png"
               alt="logo"
             />
             <p class="our-team__accordion-title mb-0">Deliver expertise</p>

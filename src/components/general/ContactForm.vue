@@ -35,7 +35,7 @@
     >
       <img
         class="pe-2 contact-form__background-img"
-        src="@/assets/images/merch/anchora/logo-white.svg"
+        src="@/assets/images/anchora-logo-white.svg"
         alt="logo"
       />
       <button

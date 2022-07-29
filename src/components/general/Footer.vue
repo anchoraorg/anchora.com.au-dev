@@ -4,7 +4,7 @@
       <div class="footer__top-left d-flex align-items-center">
         <img
           class="pe-2 footer__logo"
-          src="@/assets/images/merch/anchora/logo-white.svg"
+          src="@/assets/images/anchora-logo-white.svg"
           alt="logo"
         />
         <h2 class="footer__title mb-0">Anchora</h2>
