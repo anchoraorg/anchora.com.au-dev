@@ -16,9 +16,11 @@
         class="our-products__item p-3 mx-lg-4 rounded d-flex flex-column justify-content-between"
         :style="{ backgroundColor: item.color }"
       >
-        <p class="our-products__number">{{ item.number }}</p>
+        <div class="our-products__number">{{ item.number }}</div>
+        <div class="logo" v-if="item.logo"><img :src="item.logo" /></div>
+        <div class="logo-text" v-if="!item.logo" :style="{ color: item.color }">{{ item.title }}</div>
         <div>
-          <h2 class="our-products__item-title">{{ item.title }}</h2>
+          <!-- <h2 class="our-products__item-title">{{ item.title }}</h2> -->
           <p class="our-products__item-description">{{ item.description }}</p>
         </div>
       </div>
@@ -36,23 +38,24 @@ export default defineComponent({
         number: "01",
         color: "#F1B437",
         title: "Lift",
+        logo: require("../../assets/images/products/lift-outline-white.svg"),
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+          "Lift is a clear methodology to programmatically migrate from AEM On Prem to AEM Cloud. Faster. Cheaper. Better.",
       },
       {
         number: "02",
         color: "#62C6E7",
-        title: "Product 2",
+        title: "KMD",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+          "Managing practice and knowdge on your AEM projects to take full advantage of Adobe Platfrom.",
       },
-      {
-        number: "03",
-        color: "#E26245",
-        title: "Product 3",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-      },
+      // {
+      //   number: "03",
+      //   color: "#E26245",
+      //   title: "Product 3",
+      //   description:
+      //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+      // },
     ]);
     return {
       cardItems,

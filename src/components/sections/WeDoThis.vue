@@ -3,7 +3,7 @@
     <h1 class="we-do-this__title text-center">WE DO THIS</h1>
     <p class="we-do-this__sub-title text-center mx-auto pb-5 mb-4">
       We integrate data and experience to provide
-      <span>meaning interactions</span>
+      <span>meaningful interactions</span>
       between brands and <br />
       your customers
     </p>

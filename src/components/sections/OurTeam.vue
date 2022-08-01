@@ -23,7 +23,7 @@
               src="@/assets/images/anchora-logo-square-transparent.png"
               alt="logo"
             />
-            <p class="our-team__accordion-title mb-0">Deliver expertise</p>
+            <p class="our-team__accordion-title mb-0">{{ item.title }}</p>
           </div>
           <p
             class="our-team__accordion-description overflow-hidden ps-3 ms-3 pt-2"
@@ -32,8 +32,7 @@
               height: item.open ? '70px !important' : '0px !important',
             }"
           >
-            We are recognised for our strategic expertise in MarTech; we don't
-            exist unless we are delivering quality outcomes.
+            {{ item.description }}
           </p>
         </div>
       </div>
@@ -43,11 +42,9 @@
         class="our-team__about d-flex justify-content-center text-white flex-column"
       >
         <p class="our-team__title-bg">
-          Lorem ipsum dolor sit amet, consectetur <span>adipiscing elit</span>.
-          Vivamus feugiat nibh et magna sollicitudin, nec efficitur risus
-          vehicula.
+          Anchora is the best place I have worked at in 20 years of working. I am very proud to join this business.
         </p>
-        <p class="our-team__author">JANE DOE</p>
+        <p class="our-team__author">Anchora Employee</p>
       </div>
     </div>
   </div>
@@ -64,28 +61,28 @@ export default defineComponent({
         open: true,
         title: "Deliver expertise",
         description:
-          "We are recognised for our strategic expertise in MarTech; we don't exist unless we are delivering quality outcomes.\n",
+          "We are recognised for our strategic and executional expertise in the Adobe stack; we don't exist unless we are delivering quality outcomes.",
       },
       {
         id: 2,
         open: false,
         title: "Invest in trusted partnerships",
         description:
-          "We are recognised for our strategic expertise in MarTech; we don't exist unless we are delivering quality outcomes.\n",
+          "Our ability to propose and deliver innovative soolution is only possible by establishing string, trusted partnerships with our clients and Adobe. We must be foccused on long lasting and meaningful relationships with our clients and partners.",
       },
       {
         id: 3,
         open: false,
         title: "Lead through learning",
         description:
-          "We are recognised for our strategic expertise in MarTech; we don't exist unless we are delivering quality outcomes.\n",
+          "Surrounder by smart people and deep expertise, we want to always be learning, trying new tand sharing our knowldge, with each other and as though leaders in our field.",
       },
       {
         id: 4,
         open: false,
         title: "Are connected and supported ",
         description:
-          "We are recognised for our strategic expertise in MarTech; we don't exist unless we are delivering quality outcomes.\n",
+          "We enjoy autonomy but don't work alone. We like feeling connect and supported because we know t hat value is created collaboratively and not build in a vacuum.",
       },
     ]);
     const openAccordionItem = (item) => {
