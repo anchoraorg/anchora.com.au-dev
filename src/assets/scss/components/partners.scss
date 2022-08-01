@@ -23,14 +23,19 @@
     grid-template-columns: repeat(auto-fit, minmax(13.75rem, 1fr));
   }
   &__logo {
-    margin: 0 3rem 5rem 0;
+    margin: 2rem 2rem 0rem 0rem;
+    align-self: center;
     @media (max-width: 996px) {
-      margin: 3rem 0;
+      margin: 1rem 1rem 0rem 0rem;
     }
     img {
       width: 5rem;
       height: auto;
+      max-height: 5rem;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
     }
+
   }
   &__about {
     position: relative;
@@ -68,5 +73,8 @@
     color: $primary;
     padding-top: clamp(2rem, 7vw, 6.25rem);
     letter-spacing: 0.179rem;
+  }
+  .row-spacer {
+    padding-bottom: 3rem;
   }
 }

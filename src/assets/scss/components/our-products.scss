@@ -67,4 +67,22 @@
     @include fonts(normal, 400, clamp(1rem, 2vw, 1.875rem), inherit);
     opacity: 0.443339;
   }
+  .logo {
+    // text-align: right;
+    // padding-top: 2rem;
+    // padding-right: 2rem;
+    img {
+      height: 100%;
+      width: 60%;
+    }
+  }
+  .logo-text {
+    font-size: 12vh;
+    text-shadow:1px 0 0 white,0 1px 0 white,-1px 0 0 white,0 -1px 0 white;
+    line-height: 0;
+    margin-left: 0;
+    text-align: left;
+    text-indent: 0;
+    padding-left: 0;
+  }
 }
