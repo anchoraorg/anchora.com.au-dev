@@ -4,7 +4,7 @@
       ACCELERATORS
     </p>
     <p class="our-products__sub-title mb-0 mt-4">
-      <span>Our products</span> mean we get your there faster.
+      <span>Our products</span> mean we get you there faster.
     </p>
     <p class="our-products__description mb-0 mt-3 text-md-start text-center">
       Reduces costs, increases quality and speed to value
