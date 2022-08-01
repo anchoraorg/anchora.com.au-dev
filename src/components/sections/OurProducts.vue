@@ -7,7 +7,7 @@
       <span>Our products</span> mean we get your there faster.
     </p>
     <p class="our-products__description mb-0 mt-3 text-md-start text-center">
-      Reduces costs, increases speed to value
+      Reduces costs, increases quality and speed to value
     </p>
     <div class="our-products__cards d-lg-flex justify-content-center">
       <div

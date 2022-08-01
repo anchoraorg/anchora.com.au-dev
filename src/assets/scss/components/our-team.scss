@@ -118,4 +118,10 @@
     padding-top: clamp(2rem, 7vw, 6.25rem);
     letter-spacing: 0.179rem;
   }
+  .quote::before {
+    content: '"';
+  }
+  .quote::after {
+    content: '"';
+  }
 }

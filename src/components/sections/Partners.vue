@@ -3,10 +3,18 @@
     <div class="partners__list">
       <h2 class="partners__subtitle">PARTNERING WITH OUR CLIENTS</h2>
       <div class="partners__wrapper-logo">
-        <div v-for="item in listOfPartners.current" :key="item.name" class="partners__logo">
+        <div
+          v-for="item in listOfPartners.current"
+          :key="item.name"
+          class="partners__logo"
+        >
           <img :src="item.logo" :alt="item.name" />
         </div>
-        <div v-for="item in listOfPartners.past" :key="item.name" class="partners__logo">
+        <div
+          v-for="item in listOfPartners.past"
+          :key="item.name"
+          class="partners__logo"
+        >
           <img :src="item.logo" :alt="item.name" />
         </div>
       </div>
@@ -45,10 +53,10 @@
       <div
         class="partners__about d-flex justify-content-center text-white flex-column"
       >
-        <p class="partners__title-bg">
-          Anchora not only had the capability to execute and provide value, but the influence within the software vendor to make it all happen.
-        </p>
-        <p class="partners__author">Cbus</p>
+        <div v-for="item in listOfPartners.quotes" :key="item.name">
+          <p class="partners__title-bg quote">{{ item.description }}</p>
+          <p class="partners__author">{{ item.name }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -60,6 +68,13 @@ export default defineComponent({
   name: "Partners",
   setup() {
     const listOfPartners = ref({
+      quotes: [
+        {
+          description:
+            "Anchora not only had the capability to execute and provide value, but the influence within the software vendor to make it all happen.",
+          name: "Cbus",
+        },
+      ],
       current: [
         {
           name: "Cbus",

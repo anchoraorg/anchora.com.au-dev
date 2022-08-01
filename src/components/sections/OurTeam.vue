@@ -41,10 +41,10 @@
       <div
         class="our-team__about d-flex justify-content-center text-white flex-column"
       >
-        <p class="our-team__title-bg">
-          Anchora is the best place I have worked at in 20 years of working. I am very proud to join this business.
-        </p>
-        <p class="our-team__author">Anchora Employee</p>
+        <div v-for="item in quotes" :key="item.name">
+          <p class="our-team__title-bg quote">{{ item.description }}</p>
+          <p class="our-team__author">{{ item.name }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -55,6 +55,13 @@ import { defineComponent, ref } from "vue";
 export default defineComponent({
   name: "OurTeam",
   setup() {
+    const quotes = ref([
+      {
+        description:
+          "Anchora is the best place I have worked at in 20 years of working. I am very proud to join this business.",
+        name: "Anchora Employee",
+      }
+    ]);
     const accordionItems = ref([
       {
         id: 1,
@@ -93,6 +100,7 @@ export default defineComponent({
     return {
       accordionItems,
       openAccordionItem,
+      quotes,
     };
   },
 });
