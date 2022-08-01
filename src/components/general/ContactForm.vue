@@ -6,9 +6,6 @@
     <div class="contact-form__form d-flex flex-column justify-content-between">
       <div class="contact-form__text">
         <h1 class="contact-form__title mb-3">Let’s get in touch</h1>
-        <p class="contact-form__description">
-          Lorem ipsum dolor conesecetur - lorem ipsum dolor.
-        </p>
       </div>
       <div
         class="contact-form__fields d-flex flex-column justify-content-between"
