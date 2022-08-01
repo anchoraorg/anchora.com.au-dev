@@ -95,7 +95,7 @@ export default defineComponent({
 <li>Web and Mobile Tracking and Analytics</li>
 <li>Omni-channel Marketing Automation and Lifecycle Campaign Management</li>
 <li>Cross Channel Conversation Rate Optimization and Personalization (CRO)</li></ul>`,
-        color: "#D89FC5",
+        color: "#62C6E7",
       },
       {
         icon: "edit",
@@ -128,7 +128,7 @@ Our team covers the key Data and Decisioning practices.
 <li>Next Best Actions</li>
 <li>AI and ML</li>
 </ul>`,
-        color: "#62C6E7",
+        color: "#D89FC5",
       },
       {
         icon: "flag",
