@@ -15,7 +15,7 @@
       >
         <AInput v-model="userState.user_name" placeholder="First name" />
         <AInput v-model="userState.user_surname" placeholder="Last name" />
-        <AInput v-model="userState.user_age" placeholder="Age" />
+        <!-- <AInput v-model="userState.user_age" placeholder="Age" /> -->
         <AInput v-model="userState.user_email" placeholder="Email" />
         <AInput v-model="userState.user_phone" placeholder="Phone" />
       </div>
@@ -51,7 +51,7 @@
 <script>
 import { computed, defineComponent, ref } from "vue";
 import { useStore } from "vuex";
-import { SET_CONTACT_FORM_DATA, SET_BODY_OVERLAY } from "@/store";
+import { SET_CONTACT_FORM_DATA, SET_BODY_OVERLAY, SEND_CONTACT_FORM_DATA } from "@/store";
 import AInput from "@/components/common/AInput";
 
 export default defineComponent({
@@ -62,7 +62,7 @@ export default defineComponent({
     const userState = ref({
       user_name: "",
       user_surname: "",
-      user_age: null,
+      // user_age: null,
       user_email: "",
       user_phone: "",
     });
@@ -71,6 +71,8 @@ export default defineComponent({
     );
 
     const closeContactForm = () => {
+      console.log(userState.value);
+      store.commit(SEND_CONTACT_FORM_DATA, userState.value);
       store.commit(SET_CONTACT_FORM_DATA, false);
       store.commit(SET_BODY_OVERLAY, false);
     };
