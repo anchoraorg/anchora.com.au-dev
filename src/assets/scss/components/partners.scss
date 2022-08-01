@@ -23,9 +23,13 @@
     grid-template-columns: repeat(auto-fit, minmax(13.75rem, 1fr));
   }
   &__logo {
-    margin: 0 10rem 5rem 0;
+    margin: 0 3rem 5rem 0;
     @media (max-width: 996px) {
       margin: 3rem 0;
+    }
+    img {
+      width: 5rem;
+      height: auto;
     }
   }
   &__about {
