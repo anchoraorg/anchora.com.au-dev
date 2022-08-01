@@ -2,7 +2,15 @@
   <div class="partners">
     <div class="partners__list">
       <h2 class="partners__subtitle">PARTNERING WITH OUR CLIENTS</h2>
-      <div class="container">
+      <div class="partners__wrapper-logo">
+        <div v-for="item in listOfPartners.current" :key="item.name" class="partners__logo">
+          <img :src="item.logo" :alt="item.name" />
+        </div>
+        <div v-for="item in listOfPartners.past" :key="item.name" class="partners__logo">
+          <img :src="item.logo" :alt="item.name" />
+        </div>
+      </div>
+      <!-- <div class="container">
         <div class="row row-spacer">
           <div class="past col">
             <h1 class="partners__title">Working with</h1>
@@ -31,7 +39,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="px-5 mb-5">
       <div
