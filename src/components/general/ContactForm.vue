@@ -36,7 +36,7 @@
         alt="logo"
       />
       <button
-        @click="closeContactForm"
+        @click="closeContactFormClose"
         class="bg-transparent contact-form__close-form border-0 shadow-none top-0 end-0 position-absolute"
       >
         <img src="@/assets/images/mobile/cross.svg" alt="close" />
@@ -66,9 +66,11 @@ export default defineComponent({
     const isContactFormOpen = computed(
       () => store.getters["isContactFormOpen"]
     );
-
+    const closeContactFormClose = () => {
+      store.commit(SET_CONTACT_FORM_DATA, false);
+      store.commit(SET_BODY_OVERLAY, false);
+    };
     const closeContactForm = () => {
-      console.log(userState.value);
       store.commit(SEND_CONTACT_FORM_DATA, userState.value);
       store.commit(SET_CONTACT_FORM_DATA, false);
       store.commit(SET_BODY_OVERLAY, false);
@@ -76,6 +78,7 @@ export default defineComponent({
     return {
       isContactFormOpen,
       closeContactForm,
+      closeContactFormClose,
       userState,
       store,
     };
