@@ -37,15 +37,15 @@
       <div
         class="footer__bottom-right d-none d-md-flex justify-content-md-start justify-content-between"
       >
-        <ul class="footer__bottom-list p-0">
+        <!-- <ul class="footer__bottom-list p-0">
           <li class="footer__bottom-item">PHILOSOPHY</li>
           <li class="footer__bottom-item">APPROACH</li>
           <li class="footer__bottom-item">BLOG</li>
-        </ul>
+        </ul> -->
         <ul class="footer__bottom-list p-0 ps-5 ms-5">
-          <li class="footer__bottom-item">PRODUCTS</li>
-          <li class="footer__bottom-item">TEAM</li>
-          <li class="footer__bottom-item">LINKEDIN</li>
+          <!-- <li class="footer__bottom-item">PRODUCTS</li>
+          <li class="footer__bottom-item">TEAM</li> -->
+          <li class="footer__bottom-item"><a href="https://www.linkedin.com/company/anchora-consulting/">LINKEDIN</a></li>
         </ul>
       </div>
       <p class="mb-0 footer__top-description d-block d-md-none my-4">
