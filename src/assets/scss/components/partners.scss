@@ -77,4 +77,10 @@
   .row-spacer {
     padding-bottom: 3rem;
   }
+  .quote::before {
+    content: '"';
+  }
+  .quote::after {
+    content: '"';
+  }
 }
