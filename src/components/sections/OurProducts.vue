@@ -47,7 +47,7 @@ export default defineComponent({
         color: "#62C6E7",
         title: "KMD",
         description:
-          "Managing practice and knowdge on your AEM projects to take full advantage of Adobe Platfrom.",
+          "Managing practice and knowdge on your AEM projects to take full advantage of Adobe Platform.",
       },
       // {
       //   number: "03",
