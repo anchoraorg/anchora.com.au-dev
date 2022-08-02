@@ -3,7 +3,6 @@
 .preview-wrapper {
   position: relative;
   background-image: url("~@/assets/images/general/preview-bg.png");
-  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -31,9 +30,9 @@
   }
 }
 @keyframes scroll {
- from {
+  from {
     transform: translateY(0rem);
- }
+  }
   to {
     transform: translateY(1rem);
   }

@@ -81,6 +81,7 @@ export default defineComponent({
 
     const openMobileMenu = () => {
       store.commit(SET_MOBILE_MENU_DATA, true);
+      document.body.classList.add("overflow-hidden");
     };
     const scrollListener = () => {
       const headerElement = document.getElementById("header");
