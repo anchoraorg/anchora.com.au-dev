@@ -36,7 +36,7 @@
           class="mobile-menu__item text-center text-white"
         >
           <a class="text-decoration-none text-white" href="#accelerators"
-            >Accelerators</a
+          >Accelerators</a
           >
         </li>
         <li
@@ -44,7 +44,7 @@
           class="mobile-menu__item text-center text-white"
         >
           <a class="text-decoration-none text-white" href="#life-anchora"
-            >Life@Ahcora</a
+          >Life@Ahcora</a
           >
         </li>
       </ul>
@@ -80,6 +80,7 @@ export default defineComponent({
 
     const closeMobileMenu = () => {
       store.commit(SET_MOBILE_MENU_DATA, false);
+      document.body.classList.remove("overflow-hidden");
     };
     return {
       openContactForm,
