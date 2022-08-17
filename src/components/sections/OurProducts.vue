@@ -18,7 +18,13 @@
       >
         <div class="our-products__number">{{ item.number }}</div>
         <div class="logo" v-if="item.logo"><img :src="item.logo" /></div>
-        <div class="logo-text" v-if="!item.logo" :style="{ color: item.color }">{{ item.title }}</div>
+        <div
+          :class="'logo-text ' + item.css"
+          v-if="!item.logo"
+          :style="{ color: item.color }"
+        >
+          {{ item.title }}
+        </div>
         <div>
           <!-- <h2 class="our-products__item-title">{{ item.title }}</h2> -->
           <p class="our-products__item-description">{{ item.description }}</p>
@@ -38,7 +44,7 @@ export default defineComponent({
         number: "01",
         color: "#F1B437",
         title: "Lift",
-        logo: require("../../assets/images/products/lift-outline-white.svg"),
+        css: "",
         description:
           "Lift is a clear methodology to programmatically migrate from Adobe Experience Manager On Prem to Adobe Experience Manager Cloud. Faster. Cheaper. Better.",
       },
@@ -46,15 +52,17 @@ export default defineComponent({
         number: "02",
         color: "#62C6E7",
         title: "KMD",
+        css: "",
         description:
-          "Managing practice and knowledge on your Adobe Experience Manager projects to take full advantage of Adobe Platform.",
+          "Knowldge Managed Delivery framework provides a practice framework to manage knowledge on your Adobe Experience Manager projects to take full advantage of Adobe Platform.",
       },
       {
         number: "03",
         color: "#E26245",
         title: "Stitch",
+        css: "product-card-stitch",
         description:
-        "Stitching digital marketing and advertising components working together, to deliver seamless and constant single customer view and experience, from brand awareness to advocate",
+          "Stitching digital marketing and advertising components working together, to deliver seamless and constant single customer view and experience, from brand awareness to advocate.",
       },
     ]);
     return {
