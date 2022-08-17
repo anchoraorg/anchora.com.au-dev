@@ -49,13 +49,13 @@ export default defineComponent({
         description:
           "Managing practice and knowledge on your Adobe Experience Manager projects to take full advantage of Adobe Platform.",
       },
-      // {
-      //   number: "03",
-      //   color: "#E26245",
-      //   title: "Stitch",
-      //   description:
-      //     "Stitching digital marketing and advertising components working together, to deliver seamless and constant single customer view and experience, from brand awareness to advocate",
-      // },
+      {
+        number: "03",
+        color: "#E26245",
+        title: "Stitch",
+        description:
+        "Stitching digital marketing and advertising components working together, to deliver seamless and constant single customer view and experience, from brand awareness to advocate",
+      },
     ]);
     return {
       cardItems,
