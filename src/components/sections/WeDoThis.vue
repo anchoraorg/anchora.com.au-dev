@@ -91,9 +91,9 @@ export default defineComponent({
           "Anchora is the leading Marketing Technology and Customer Experience consultancy in APAC.",
         readmore: `Anchora is a true digital partner to your business and team, delivering together on the <strong>Business Discovery and Planning, Implementations/Integrations, Training and Enablement, Hyper-care, Ongoing Drive Success and Full Services</strong>. Our Leading MarTech specialists are industry renowned in:<br>
 <ul><li>Content and Digital Assets Management (CMS)</li>
-<li>Customer Data Management (CDP)</li>
+<li>Customer Data Management and Platform (CDP)</li>
 <li>Web and Mobile Tracking and Analytics</li>
-<li>Omni-channel Marketing Automation and Lifecycle Campaign Management</li>
+<li>Data Driven Omni-channel Marketing Automation and Lifecycle Campaign Management, B2C and B2B</li>
 <li>Cross Channel Conversation Rate Optimization and Personalization (CRO)</li></ul>`,
         color: "#62C6E7",
       },

@@ -40,21 +40,21 @@ export default defineComponent({
         title: "Lift",
         logo: require("../../assets/images/products/lift-outline-white.svg"),
         description:
-          "Lift is a clear methodology to programmatically migrate from AEM On Prem to AEM Cloud. Faster. Cheaper. Better.",
+          "Lift is a clear methodology to programmatically migrate from Adobe Experience Manager On Prem to Adobe Experience Manager Cloud. Faster. Cheaper. Better.",
       },
       {
         number: "02",
         color: "#62C6E7",
         title: "KMD",
         description:
-          "Managing practice and knowdge on your AEM projects to take full advantage of Adobe Platform.",
+          "Managing practice and knowledge on your Adobe Experience Manager projects to take full advantage of Adobe Platform.",
       },
       // {
       //   number: "03",
       //   color: "#E26245",
-      //   title: "Product 3",
+      //   title: "Stitch",
       //   description:
-      //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+      //     "Stitching digital marketing and advertising components working together, to deliver seamless and constant single customer view and experience, from brand awareness to advocate",
       // },
     ]);
     return {
