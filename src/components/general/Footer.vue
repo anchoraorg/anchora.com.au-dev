@@ -41,7 +41,7 @@
           <p class="footer__bottom-title mb-0">Policies</p>
           <p class="footer__bottom-subtitle">
             <ul class="footer__bottom-list p-0">
-              <li class="footer__bottom-item"><a href="@/assets/policies/Modern-Slavery-Policy.pdf">Modern Slavery Policy</a></li>
+              <li class="footer__bottom-item"><a href="policies/Modern-Slavery-Policy.pdf">Modern Slavery Policy</a></li>
             </ul>
           </p>
         </div>
