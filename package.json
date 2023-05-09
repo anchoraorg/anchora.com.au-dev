@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint --fix",
-    "dev": "vite"
+    "dev": "vite --host 0.0.0.0"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.5",
